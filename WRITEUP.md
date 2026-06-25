@@ -2,7 +2,7 @@
 
 **Track: Agents for Business**
 
-**Code / live project:** `<github-link>`  ·  **Demo video:** `<youtube-link>`
+**Code / live project:** https://github.com/Akhil-1527/agentaudit  ·  **Demo video:** `<youtube-link>`
 
 ## The problem I kept running into
 
