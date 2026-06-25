@@ -1,0 +1,21 @@
+# Secrets — never commit
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# AgentAudit output
+reports/
+*.report.json
+*.report.md
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
