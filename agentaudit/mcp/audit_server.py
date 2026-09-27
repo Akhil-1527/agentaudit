@@ -4,7 +4,7 @@ AgentAudit exposed as an MCP server.
 This makes AgentAudit itself callable as a tool by ANY MCP-aware agent: a CI agent,
 an orchestrator, or a security copilot can invoke `audit_agent(...)` and get back a
 structured findings report. (The target's tools are a second MCP server in
-agentaudit/mcp/target_server.py — so the project both *builds* and *audits* MCP.)
+agentaudit/mcp/target_server.py, so the project both *builds* and *audits* MCP.)
 
 Run:  python -m agentaudit.mcp.audit_server
 """

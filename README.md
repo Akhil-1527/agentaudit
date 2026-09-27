@@ -2,7 +2,7 @@
 
 > An autonomous multi-agent system that **red-teams other AI agents and MCP servers** for security vulnerabilities, then writes the report.
 
-**Capstone — Kaggle 5-Day AI Agents: Intensive Vibe Coding Course with Google · Agents for Business track.**
+**Capstone project for the Kaggle 5-Day AI Agents: Intensive Vibe Coding Course with Google · Agents for Business track.**
 
 ---
 
@@ -38,7 +38,7 @@ recon  →  attack (5 skills, multi-turn)  →  judge  →  report
 uv sync
 cp .env.example .env        # add your Google AI Studio key (https://aistudio.google.com/apikey)
 
-# Run fully offline against the bundled mock target — no key required:
+# Run fully offline against the bundled mock target (no key required):
 uv run agentaudit audit --target mock
 
 # Audit the real ADK + Gemini agent:
@@ -67,13 +67,13 @@ detector), so the library is easy to extend: drop in a new folder, register it, 
 
 ## Sample output
 ```
-─ AgentAudit — mock-vulnerable-support ─
+─ AgentAudit: mock-vulnerable-support ─
  critical  indirect-injection  injection      VULNERABLE
  critical  data-exfiltration   exfiltration   VULNERABLE
  critical  tool-misuse         tool_misuse    VULNERABLE
  high      prompt-injection    injection      VULNERABLE
  high      jailbreak           jailbreak      VULNERABLE
-Risk score: 160 — CRITICAL RISK
+Risk score: 160 (CRITICAL RISK)
 ```
 Open the generated `*.report.html` for the dashboard view. Against the **real
 ADK + Gemini** target, AgentAudit has caught a genuine **critical

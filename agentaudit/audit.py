@@ -2,9 +2,9 @@
 The audit engine: recon -> attack each skill -> judge -> assemble a report.
 
 Two attack modes:
-  * "scripted" (default) — fire each skill's seed prompts. Deterministic, fast,
+  * "scripted" (default): fire each skill's seed prompts. Deterministic, fast,
     reproducible, and runs against the mock target with no API key.
-  * "agentic" — an ADK attacker agent adapts over multiple turns (needs Gemini).
+  * "agentic": an ADK attacker agent adapts over multiple turns (needs Gemini).
 
 The deterministic skill detectors are the primary verdict; the LLM judge (when
 enabled) only adds a second opinion / richer evidence on confirmed findings.

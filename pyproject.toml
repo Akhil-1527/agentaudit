@@ -1,7 +1,7 @@
 [project]
 name = "agentaudit"
 version = "0.1.0"
-description = "AgentAudit — an autonomous multi-agent system that red-teams other AI agents and MCP servers for security vulnerabilities."
+description = "AgentAudit is an autonomous multi-agent system that red-teams other AI agents and MCP servers for security vulnerabilities."
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [

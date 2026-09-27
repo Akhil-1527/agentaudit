@@ -1,5 +1,5 @@
 """
-HTTP API for AgentAudit — deployable to Google Cloud Run.
+HTTP API for AgentAudit, deployable to Google Cloud Run.
 
     POST /audit   {"target": "mock", "mode": "scripted"}  -> findings JSON
     GET  /health

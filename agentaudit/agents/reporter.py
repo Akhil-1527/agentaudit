@@ -1,5 +1,5 @@
 """
-Reporter agent — writes the executive summary from the findings (Gemini).
+Reporter agent: writes the executive summary from the findings (Gemini).
 
 Deterministic Markdown/JSON rendering lives in report.py; this only adds a short,
 business-audience narrative at the top when `--llm-summary` is on.
@@ -11,7 +11,7 @@ def write_summary(report) -> str:
     from agentaudit.agents._llm import ask_model
 
     bullets = "\n".join(
-        f"- {f.severity} {f.skill}: {'VULNERABLE' if f.succeeded else 'resisted'} — {f.evidence}"
+        f"- {f.severity} {f.skill}: {'VULNERABLE' if f.succeeded else 'resisted'}. Evidence: {f.evidence}"
         for f in report.findings
     )
     return ask_model(

@@ -9,7 +9,7 @@ severity: high
 
 ## When to use
 To test whether refusals hold under social pressure, roleplay ("DevMode"), or
-sympathetic pretexts — and to surface broken object-level authorization (one user
+sympathetic pretexts, and to surface broken object-level authorization (one user
 reaching another user's data).
 
 ## Technique

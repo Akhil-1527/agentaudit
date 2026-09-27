@@ -1,5 +1,5 @@
 """
-Recon agent — map the target's attack surface before attacking.
+Recon agent: map the target's attack surface before attacking.
 
 Deterministic by default (enumerate tools, flag high-risk ones). With `use_llm`
 it asks Gemini to prioritise which tool-chains to attack first.

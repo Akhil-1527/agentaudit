@@ -1,4 +1,4 @@
-# AgentAudit — Architecture
+# AgentAudit Architecture
 
 AgentAudit is a multi-agent system that red-teams a *target* AI agent (or MCP
 server), judges whether each attack succeeded, and produces a severity-ranked
@@ -43,9 +43,9 @@ flowchart TD
 | Antigravity | record a clip building a skill in Antigravity for the video |
 
 ## Two target modes
-- **`mock`** — a deterministic, offline stand-in (`agentaudit/targets.py`). No API key.
+- **`mock`**: a deterministic, offline stand-in (`agentaudit/targets.py`). No API key.
   Used by tests, CI, and reproducible demos.
-- **`acme-support`** — the real ADK + Gemini support agent. Needs `GEMINI_API_KEY`.
+- **`acme-support`**: the real ADK + Gemini support agent. Needs `GEMINI_API_KEY`.
 
 ## Design choices
 - **Deterministic core, LLM enhancements.** Verdicts come from code-level detectors

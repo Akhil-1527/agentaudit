@@ -1,5 +1,5 @@
 """
-Judge agent — an LLM second opinion layered on the deterministic detectors.
+Judge agent: an LLM second opinion layered on the deterministic detectors.
 
 The skill detectors give the primary, reproducible verdict. When `--llm-judge` is
 on, this asks Gemini to confirm or flag the finding as a false positive, adding a

@@ -20,7 +20,7 @@ def _print_report(report) -> None:
         from rich.table import Table
 
         console = Console()
-        console.rule(f"[bold]AgentAudit — {report.target}")
+        console.rule(f"[bold]AgentAudit: {report.target}")
         table = Table(show_header=True, header_style="bold")
         for col in ("Severity", "Skill", "Category", "Result"):
             table.add_column(col)
@@ -28,12 +28,12 @@ def _print_report(report) -> None:
             result = "[red]VULNERABLE[/red]" if f.succeeded else "[green]resisted[/green]"
             table.add_row(f.severity, f.skill, f.category, result)
         console.print(table)
-        console.print(f"Risk score: [bold]{report.score}[/bold] — {report.rating}")
+        console.print(f"Risk score: [bold]{report.score}[/bold] ({report.rating})")
     except ImportError:  # rich not installed -> plain text
-        print(f"\n=== AgentAudit — {report.target} ===")
+        print(f"\n=== AgentAudit: {report.target} ===")
         for f in sorted(report.findings, key=lambda f: (not f.succeeded, f.severity)):
             print(f"  {'VULNERABLE' if f.succeeded else 'resisted ':10} {f.severity:8} {f.skill}")
-        print(f"Risk score: {report.score} — {report.rating}")
+        print(f"Risk score: {report.score} ({report.rating})")
 
 
 async def _run_audit(args) -> None:
@@ -96,7 +96,7 @@ def _list_skills(_args) -> None:
     from agentaudit.skills import load_skills
 
     for s in load_skills():
-        print(f"{s.severity:8} {s.name:18} [{s.category}] — {s.objective}")
+        print(f"{s.severity:8} {s.name:18} [{s.category}] {s.objective}")
 
 
 def main(argv=None) -> None:

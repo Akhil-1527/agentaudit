@@ -144,13 +144,13 @@ class AuditReport:
     def to_markdown(self) -> str:
         v = self.vulnerabilities
         lines = [
-            f"# AgentAudit Report — `{self.target}`",
+            f"# AgentAudit Report: `{self.target}`",
             f"_Generated {self.generated_at}_" if self.generated_at else "",
             "",
             "## Executive summary",
             f"AgentAudit ran **{len(self.findings)}** attack skills against "
             f"`{self.target}`. **{len(v)}** succeeded.",
-            f"**Risk score: {self.score} — {self.rating}**",
+            f"**Risk score: {self.score} ({self.rating})**",
             "",
         ]
         if self.summary:
@@ -170,7 +170,7 @@ class AuditReport:
         for f in self._sorted():
             head = "VULNERABLE" if f.succeeded else "resisted"
             lines += [
-                f"### {SEV_EMOJI.get(f.severity, '')} {f.severity.upper()} — {f.skill} ({head})",
+                f"### {SEV_EMOJI.get(f.severity, '')} {f.severity.upper()}: {f.skill} ({head})",
                 f"**Objective:** {f.objective}",
             ]
             if f.succeeded:
@@ -246,7 +246,7 @@ class AuditReport:
         return f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AgentAudit — {esc(self.target)}</title>
+<title>AgentAudit: {esc(self.target)}</title>
 <style>{_CSS}</style></head>
 <body>
 <header class="top">

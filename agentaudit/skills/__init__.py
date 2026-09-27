@@ -1,10 +1,10 @@
 """
-Attack skills — AgentAudit's modular, composable library of red-team techniques.
+Attack skills: AgentAudit's modular, composable library of red-team techniques.
 
 Each skill is a self-contained package with:
-  * SKILL.md      — human/agent-readable doc (the Day-3 "Agent Skills" pattern:
+  * SKILL.md:       human/agent-readable doc (the Day-3 "Agent Skills" pattern:
                     short description first, full technique on demand).
-  * __init__.py   — an executable `SKILL = AttackSkill(...)` definition.
+  * __init__.py:    an executable `SKILL = AttackSkill(...)` definition.
 
 The AttackerAgent runs a skill's `seed_prompts` against the target, and a skill's
 `detector` gives a fast, deterministic verdict on whether the attack landed
